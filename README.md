@@ -33,7 +33,7 @@ A fast, lightweight image viewer with a clean, uncluttered interface: panels and
 
 - **Improved slideshow** - a floating control bar, 13 transition styles (fade, slide, blur, pixel mash, wipe, iris, dissolve...), an adjustable easing curve, duration and strength, and optional file name / date captions. See [Slideshow](#slideshow).
 
-- **More image formats** - WebP, TIFF, TGA, WBMP and ICNS out of the box, plus JPEG-XL, AVIF, APNG, HEIF and RAW through plugins. See [Additional image formats](#additional-image-formats).
+- **More image formats** - WebP, TIFF, TGA, WBMP and ICNS out of the box, plus JPEG-XL, AVIF, APNG, HEIF and RAW if you add the matching plugins (not bundled). See [Additional image formats](#additional-image-formats).
 
 - **Batch image format conversion** - convert many images to another format in one go.
 
@@ -307,7 +307,7 @@ Built-in Qt plugins cover JPEG, PNG, GIF, BMP, ICO, SVG, WebP, TIFF, TGA, WBMP a
 
 The format is detected from the file **content**, not the extension, so a WebP renamed to `.png` still opens.
 
-usagimage can open some extra formats via third-party image plugins. All of them are included with windows package.
+usagimage can open some extra formats via third-party image plugins. **They are not included in the Windows package.** To use one, build or download the plugin DLL for your Qt version (Qt 6, MinGW / UCRT64) and put it into the `imageformats` folder next to `usagimage.exe` (restart the app afterwards). Until then these files will not open.
 
 <table>
   <thead>
