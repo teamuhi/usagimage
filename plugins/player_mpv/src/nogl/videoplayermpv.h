@@ -3,7 +3,7 @@
 #include "videoplayer.h"
 #include <QKeyEvent>
 
-#if defined QIMGV_PLAYER_MPV_LIBRARY
+#if defined USAGIMAGE_PLAYER_MPV_LIBRARY
  #define TEST_COMMON_DLLSPEC Q_DECL_EXPORT
 #else
  #define TEST_COMMON_DLLSPEC Q_DECL_IMPORT

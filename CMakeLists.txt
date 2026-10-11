@@ -1,7 +1,7 @@
-# qimgv root
+# usagimage root
 cmake_minimum_required(VERSION 3.13)
-project(qimgv
-    VERSION 1.0.6
+project(usagimage
+    VERSION 1.0.7
     HOMEPAGE_URL "https://github.com/easymodo/qimgv"
     LANGUAGES CXX)
 
@@ -75,7 +75,7 @@ endif()
 
 ##############################################################
 
-add_subdirectory(qimgv)
+add_subdirectory(usagimage)
 
 if(VIDEO_SUPPORT)
     add_subdirectory(plugins/player_mpv)

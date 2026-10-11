@@ -1,7 +1,7 @@
 #!/bin/bash
 # Builds a portable Windows package from an already built tree (MSYS2 UCRT64, Qt6).
 # Usage (UCRT64 shell, repo root): scripts/package-win-release.sh <build_dir> <out_dir>
-# Result: <out_dir> contains qimgv.exe + Qt/runtime DLLs, ready to zip.
+# Result: <out_dir> contains usagimage.exe + Qt/runtime DLLs, ready to zip.
 set -euo pipefail
 
 BUILD_DIR=$(realpath "${1:?build dir}")
@@ -11,13 +11,13 @@ MINGW_BIN=${MINGW_PREFIX:-/ucrt64}/bin
 
 rm -rf "$OUT_DIR"
 mkdir -p "$OUT_DIR"
-cp "$BUILD_DIR/qimgv/qimgv.exe" "$OUT_DIR"
-cp -r "$BUILD_DIR/qimgv/translations" "$OUT_DIR"
+cp "$BUILD_DIR/usagimage/usagimage.exe" "$OUT_DIR"
+cp -r "$BUILD_DIR/usagimage/translations" "$OUT_DIR"
 mkdir -p "$OUT_DIR/cache" "$OUT_DIR/conf" "$OUT_DIR/thumbnails"
-cp -r "$SRC_DIR/qimgv/distrib/mimedata/data" "$OUT_DIR"
+cp -r "$SRC_DIR/usagimage/distrib/mimedata/data" "$OUT_DIR"
 
 # Qt DLLs, platform plugin, styles, image format plugins
-windeployqt6 --release --no-translations --no-system-d3d-compiler --no-opengl-sw "$OUT_DIR/qimgv.exe"
+windeployqt6 --release --no-translations --no-system-d3d-compiler --no-opengl-sw "$OUT_DIR/usagimage.exe"
 
 # Extra image formats (webp, tiff, tga, ...) shipped with qt6-imageformats
 PLUG_DIR=$(dirname "$(find "${MINGW_PREFIX:-/ucrt64}/share/qt6/plugins/imageformats" -name 'qwebp.dll' | head -n1)")

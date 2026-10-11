@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=usagimage
+GenericName=Image Viewer
+Comment=Qt image viewer
+Exec=usagimage %f
+Icon=usagimage
+Terminal=false
+Type=Application
+Categories=Qt;Graphics;Viewer;
+MimeType=video/webm;image/jpeg;image/gif;image/png;image/bmp;image/webp;
+Keywords=image;view;usagimage;picture;gif;jpeg;webm;

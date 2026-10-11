@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.11)
 project(player_mpv
-    DESCRIPTION "video player widget for qimgv (using mpv)"
+    DESCRIPTION "video player widget for usagimage (using mpv)"
     LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 
 # only export CreatePlayerWidget function
-ADD_DEFINITIONS(-DQIMGV_PLAYER_MPV_LIBRARY)
+ADD_DEFINITIONS(-DUSAGIMAGE_PLAYER_MPV_LIBRARY)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Widgets)
@@ -54,5 +54,5 @@ endif()
 if(WIN32)
     install(TARGETS player_mpv LIBRARY DESTINATION "${CMAKE_INSTALL_BINDIR}/plugins")
 else()
-    install(TARGETS player_mpv LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}/qimgv")
+    install(TARGETS player_mpv LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}/usagimage")
 endif()

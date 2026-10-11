@@ -70,11 +70,11 @@ jobs:
           }
           $ver = '${{ steps.ver.outputs.version }}'
           $out = Join-Path $env:GITHUB_WORKSPACE 'dist'
-          & $iscc "/DAppVersion=$ver" "/DSourceDir=${{ steps.pkg.outputs.dir }}" "/DOutputDir=$out" scripts\qimgv-setup.iss
+          & $iscc "/DAppVersion=$ver" "/DSourceDir=${{ steps.pkg.outputs.dir }}" "/DOutputDir=$out" scripts\usagimage-setup.iss
           if ($LASTEXITCODE -ne 0) { throw 'ISCC failed' }
-          $setup = Join-Path $out "qimgv-setup-$ver-x64.exe"
+          $setup = Join-Path $out "usagimage-setup-$ver-x64.exe"
           if (-not (Test-Path $setup)) { throw "Missing $setup" }
-          "file=dist/qimgv-setup-$ver-x64.exe" >> $env:GITHUB_OUTPUT
+          "file=dist/usagimage-setup-$ver-x64.exe" >> $env:GITHUB_OUTPUT
 
       - uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
@@ -84,7 +84,7 @@ jobs:
             ${{ steps.pkg.outputs.file }}
           generate_release_notes: true
           body: |
-            **Install:** download `qimgv-setup-<version>-x64.exe` and run it. Download the `.zip` instead for a portable copy.
+            **Install:** download `usagimage-setup-<version>-x64.exe` and run it. Download the `.zip` instead for a portable copy.
             The installer is unsigned, so Windows SmartScreen may warn: click *More info* > *Run anyway*.
 
       - uses: actions/upload-artifact@v4
