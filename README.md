@@ -1,6 +1,6 @@
 A personal fork of [qimgv](https://github.com/easymodo/qimgv) by easymodo, made for my own use. I do not claim or own anything in the original project.
 
-Usagimage version: 1.0.6
+Usagimage version: 1.0.7
 =====
 A fast, lightweight image viewer with a clean, uncluttered interface: panels and bars only show up when you need them. Video playback is optional.
 
